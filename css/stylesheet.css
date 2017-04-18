@@ -977,6 +977,13 @@ box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     line-height:24px;
     padding: 20px 0px 40px 0px;
   }
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
 
   .portfolio-ul > li {
     width: 90%;
