@@ -718,7 +718,7 @@ input:focus {
     /* height: 38px; */
     /* padding: 20px; */
     line-height: 30px;
-    /*padding: 9px 18px 7px 18px;*/
+    padding: 9px 18px 7px 18px;
     display: inline-block;
     margin: 20px 0 0 0 ;
     transition: all 0.4s ease-in-out 0.05s;
