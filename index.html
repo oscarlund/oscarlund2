@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name = "viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0">
+      <meta name="author" content="oscarlund">
+
+      <title>Oscar Lund - Full Stack Designer</title>
+      <!--Bootstrap-->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/stylesheet.css" rel="stylesheet">
+      <link href="css/layout.css" rel="stylesheet">
+      <link href="css/animate.css" rel="stylesheet">
+      <link rel="icon" type="image/png" href="https://dl.dropboxusercontent.com/s/qcecs4zerzakqms/oscarlund-productions-300.png" />
+      <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900" rel="stylesheet">
+      <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+      <!-- for unminified version add this -->
+      <link rel="stylesheet" type="text/css" href="/fonts/fonts.css" />
+      <!-- for minified version add this -->
+      <link rel="stylesheet" type="text/css" href="/fonts/fonts.min.css" />
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/custom.js"></script>
+
+
+      <!--Scroll-->
+      <script type="text/javascript">
+      $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+            }
+          }
+        });
+      });
+      </script>
+
+      <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = "300px";
+        }
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0px";
+        }
+    </script>
+
+        <script>
+        $(document).ready( function(){
+          $('#target').click( function() {
+              var toggleWidth = $("#myNav").width() == 300 ? "40px" : "300px";
+              $('#myNav').animate({ width: toggleWidth }, 200, 'swing');
+          });
+        });
+      </script>
+
+
+      <script>
+      $(function() {
+          $('.nav a').on('click', function(){
+              if($('.navbar-toggle').css('display') !='none'){
+                  $(".navbar-toggle").trigger( "click" );
+              }
+          });
+      });
+    </script>
+
+<!--HIDE NAV ON LI CLICK-->
+    <script>
+    $('#navbar').navbar().on('shown', function(){
+        $('body').css('overflow', 'hidden');
+    }).on('hidden', function(){
+        $('body').css('overflow', 'auto');
+    })
+    </script>
+
+<!--NO SCROLL NAVBAR-->
+    <script>
+    $( document ).ready(function() {
+        $('.navbar-toggle collapsed').click(function() {
+           $('body').addClass('overflowhidden')
+        });
+    });
+    </script>
+
+    <script>
+    $(document).foundation('topbar', {scrolltop: false});
+    </script>
+
+    <script>
+      $(window)
+        .on("show.bs.modal", function () {
+          var top = $("body").scrollTop(); $("body").css('position','fixed').css('overflow','hidden').css('top',-top).css('width','100%').css('height',top+5000);
+        })
+        .on("hide.bs.modal", function () {
+          var top = $("body").position().top; $("body").css('position','relative').css('overflow','hidden').css('height','auto').css('top',0).scrollTop(-top);
+        });
+    </script>
+  </head>
+
+
+  <body id="zero" style="position: relative;">
+
+<!--NAVBAR-->
+      <nav id="one" class="navbar navbar-inverse fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button style="margin-top:6px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span style="opacity:0;" class="icon-bar middle-bar"></span>
+                    <span class="icon-bar top-bar"></span>
+                    <span style="opacity:0;" class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style="font-family: 'proxima-nova', open-sans, sans-serif; letter-spacing:0px;"><img style="width:20px; display:inline; margin-right:10px;" src="https://dl.dropboxusercontent.com/s/ttat6cn2xzf6nqp/oscarlund-productions-300-white.png?dl=0" /><b >Oscar Lund</b>&nbsp;&nbsp;<span>Full-Stack Designer</span></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a target="_blank" rel="noreferrer" href="http://oscarlund.com/dailyui">DailyUI</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/oscarlund/">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noreferrer" href="http://oscarlund.us15.list-manage.com/subscribe/post?u=c7d45faaa0948b4756998c0e1&amp;id=a8406ede6c">Newsletter</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noreferrer" href="mailto:hello@oscarlund.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<!--NAVBAR END-->
+
+<div class="body-container">
+<div class="container-top">
+  <img class="logo-img" src="https://dl.dropboxusercontent.com/s/vi1nl4gtz1ka3ui/oscarlund-productions-300-blue.png?dl=0"/>
+  <h1>Full-Stack <span style="font-weight:100;">Designer</span></h1>
+  <h2>Oscar Lund - Freelancer</h2>
+  <a target="_blank" rel="noreferrer" href="http://oscarlund.com/dailyui">
+    <div class="button ">
+    LOOK AT MY UI CHALLENGE
+  </div></a>
+</div>
+<div class="container-intro">
+
+  <p>
+    <a href="https://www.linkedin.com/in/oscarlund/"><i>Only the sky is the limit.</i></a><br /><br />
+
+Those who work with me describe me as <i>creative</i>, <i>detailed oriented</i> and <i>goals driven</i> with the ability to exceed expectations and build strong relations. As a full stack designer, with strong analytical and strategic abilities, I am able to combine hands on content creation with business development on a high level.
+
+I am a team player, dedicated to each project I work on. With interest in both the broad brushstrokes and the nitty gritty details of the product development process, I am a valuable asset in a large variety of development projects.
+
+Not only am I specialised in the area of IT Design, I am also a competent front end developer with strong knowledge in HTML and CSS. I also work in Javascript.
+
+My passion is to continue develop products people love, and experience together. I will do so through design, music, code, mentoring, consulting, speaking, and much more.
+  </p>
+
+<p style="text-align:Center;"><i>I have a newsletter full of <b>design tips and tricks</b>. Subscribe today!</i></p>
+  <div class="sign-up">
+    <div class="container-sign-up">
+      <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+        <form action="http://oscarlund.us15.list-manage.com/subscribe/post?u=c7d45faaa0948b4756998c0e1&amp;id=a8406ede6c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c7d45faaa0948b4756998c0e1_a8406ede6c" tabindex="-1" value=""></div>
+          <div class="clear">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+        </form>
+        </div>
+
+<!--End mc_embed_signup-->
+    </div>
+  </div>
+</div>
+
+<div class="container-products">
+  <div class="logo">
+    <h2 style="color:#fff;">
+      What can I do for <span style="font-weight:500">You?</span>
+    </h2>
+  </div>
+
+  <div class="my-skills">
+    <div class="skill">
+      <b>UX Design</b><br />
+      Sketching<br />
+      Wireframing<br />
+      User Testing<br />
+      Design Thinking
+    </div>
+    <div class="skill">
+      <b>UI Design</b><br />
+      Visual Design<br />
+      Interface Design<br />
+      High Fidility<br />
+      Layout & Style
+    </div>
+    <div class="skill">
+      <b>Front-End</b><br />
+      HTML<br />
+      CSS/SASS<br />
+      Javascript<br />
+      Wordpress
+    </div>
+    <div class="skill">
+      <b>Graphic</b><br />
+      Illustrations<br />
+      Photo Editing<br />
+      Video Editing<br />
+      Motion Graphics
+    </div>
+  </div>
+  <div class="button-2-container">
+  <a target="_blank" rel="noreferrer" href="mailto:hello@oscarlund.com">
+    <div class="button-2">
+    EMAIL ME, ALREADY TODAY
+  </div></a>
+  </div>
+</div>
+
+<div class="container-intro">
+  <div class="logo">
+    <h2 style="color:#3d464d;">
+      Some of my <span style="font-weight:500">previous work</span>
+    </h2>
+    <p>
+      <a target="_blank" rel="noreferrer" href="http://oscarlund.com/dailyui">More UI-Design <span style="text-decoration:underline;">here</span></a>
+    </p>
+  </div>
+  <ul class="portfolio-ul">
+    <!--PRODUCT 1 TEORIAPPAR DASH-->
+    <li>
+        <div class="grid">
+          <a data-toggle="modal" data-target="#teoriapp-1">
+          <figure class="effect-bubba">
+            <img src="https://dl.dropboxusercontent.com/s/nba1kdhnpg97d6j/Teori2.jpg?dl=0" alt="img02"/>
+              <figcaption>
+              </figcaption>
+          </figure></a>
+        </div>
+      <img class="product-logo" src="https://dl.dropboxusercontent.com/s/eg2w4tg0sqr3y4k/teori_logo%20copy.png?dl=0"/>
+    </li>
+      <!--PRODUCT 2 WÅGA-->
+      <li>
+          <div class="grid">
+            <a data-toggle="modal" data-target="#waga-1">
+            <figure class="effect-bubba">
+              <img src="https://dl.dropboxusercontent.com/s/xx0m0uq1dk7d393/waga2.jpg?dl=0" alt="img02"/>
+                <figcaption>
+                </figcaption>
+            </figure></a>
+          </div>
+        <img class="product-logo" src="https://dl.dropboxusercontent.com/s/bd0iss3u75qr7ac/waga-fav-2.png?dl=0"/>
+      </li>
+        <!--PRODUCT 3 DRIBBLE-->
+          <li>
+              <div class="grid">
+                <a data-toggle="modal" data-target="#dribbble-intro">
+                <figure class="effect-bubba">
+                  <img src="https://dl.dropboxusercontent.com/s/4gszqmeo1ed7ckm/DRIBBLE%20HELLO.jpg?dl=0" alt="img02"/>
+                    <figcaption>
+                    </figcaption>
+                </figure></a>
+              </div>
+            <img class="product-logo" src="https://dl.dropboxusercontent.com/s/qcecs4zerzakqms/oscarlund-productions-300.png?dl=0"/>
+          </li>
+          <!--PRODUCT 4 VC-->
+            <li>
+                <div class="grid">
+                  <a data-toggle="modal" data-target="#venture-cup-1">
+                  <figure class="effect-bubba">
+                    <img src="https://dl.dropboxusercontent.com/s/sx6q834c04db8pr/VC-homepage.jpg?dl=0" alt="img02"/>
+                      <figcaption>
+                      </figcaption>
+                  </figure></a>
+                </div>
+              <img class="product-logo" src="https://dl.dropboxusercontent.com/s/d9fgkoqcyvdi4u6/vc_circle.png?dl=0"/>
+            </li>
+            <!--PRODUCT 5 MOBILE APP-->
+              <li>
+                  <div class="grid">
+                    <a data-toggle="modal" data-target="#mobile-app-1">
+                    <figure class="effect-bubba">
+                      <img src="https://dl.dropboxusercontent.com/s/np7xt52wfsevg5d/APP.jpg?dl=0" alt="img02"/>
+                        <figcaption>
+                        </figcaption>
+                    </figure></a>
+                  </div>
+                <img class="product-logo" src="https://dl.dropboxusercontent.com/s/doy5kh0h4dev2m4/dkv-2-logo.png?dl=0"/>
+              </li>
+  <!--PRODUCT 6 - Ace-up trans-->
+      <li>
+          <div class="grid">
+            <a data-toggle="modal" data-target="#ace-up-transaction">
+            <figure class="effect-bubba">
+              <img src="https://dl.dropboxusercontent.com/s/dfx3pjto29m3euh/Ace-up%20-%20trans2.jpg?dl=0" alt="img02"/>
+                <figcaption>
+                </figcaption>
+            </figure></a>
+          </div>
+        <img class="product-logo" src="https://dl.dropboxusercontent.com/s/2cm42z88lv43igy/ace-up-2-u.png?dl=0"/>
+      </li>
+
+</ul>
+</div>
+
+<div class="footer">
+  <div class="logo">
+    <img class="logo-img" src="https://dl.dropboxusercontent.com/s/qcecs4zerzakqms/oscarlund-productions-300.png"/>
+    <p>
+      DESIGN by <span style="font-weight:500">OSCAR LUND</span>
+    </p>
+    <a target="_blank" rel="noreferrer" href="mailto:hello@oscarlund.com">hello@oscarlund.com</a>
+    <p>
+      <a href="tel:0046730308259">+46 730 30 82 59</a>
+    </p>
+    <p style="margin-top:25px;">
+    <a target="_blank" rel="noreferrer" href="http://oscarlund.com" class="design-by">Design by Oscar Lund</a>
+    </p>
+    <p style="font-size:10px; color:#ccc;">
+      <i>All rights reserved, Oscar Lund, 2017</i>
+    </p>
+  </div>
+</div>
+</div>
+
+<!--MODALS-->
+    <!-- TEORIAPPAR DASHBOARD-->
+    <div class="modal fade" id="teoriapp-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                        </button>
+                         <h3 class="modal-title" id="myModalLabel">Web Application</h3>
+                         <h4>for Teoriappar</h4>
+
+                    </div>
+                    <div class="modal-body">
+                      <img class="modal-img" src="https://dl.dropboxusercontent.com/s/nba1kdhnpg97d6j/Teori2.jpg?dl=0"/>
+                    </div>
+                    <div class="modal-footer">
+                      <p style="margin: 0.5em 0 0.1em; 0">
+                        <b>Statistics Dashboard</b>
+                      </p>
+                      <p style="margin-top:0.1em;">
+                        TBR 2017
+                      </p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WÅGA -->
+    <div class="modal fade" id="waga-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                        </button>
+                         <h3 class="modal-title" id="myModalLabel">Website & Brand</h3>
+                         <h4>for SHIRTS by WÅGA</h4>
+
+                    </div>
+                    <div class="modal-body">
+                      <img class="modal-img" src="https://dl.dropboxusercontent.com/s/xx0m0uq1dk7d393/waga2.jpg?dl=0"/>
+                    </div>
+                    <div class="modal-footer">
+                      <p style="margin: 0.5em 0 0.1em; 0">
+                        <b>Brand Image </b>
+                      </p>
+                      <p style="margin-top:0.1em;">
+                        <a target="_blank" rel="noreferrer" href="https://oscarlund.github.io/waga">http://waga.com</a>
+                      </p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- DRIBBBLE -->
+  <div class="modal fade" id="dribbble-intro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+          <div class="modal-dialog vertical-align-center">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                      </button>
+                       <h3 class="modal-title" id="myModalLabel">Introduction Animation</h3>
+                       <h4>for Dribbble</h4>
+
+                  </div>
+                  <div class="modal-body">
+                    <img class="modal-img" src="https://dl.dropboxusercontent.com/s/c4ozqmztocryux3/dribblehello32_2.gif"/>
+                  </div>
+                  <div class="modal-footer">
+                    <p style="margin: 0.5em 0 0.1em; 0">
+                      <b>Motion Art</b>
+                    </p>
+                    <p style="margin-top:0.1em;">
+                      April 2017
+                    </p>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Venture Cup -->
+  <div class="modal fade" id="venture-cup-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+          <div class="modal-dialog vertical-align-center">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                      </button>
+                       <h3 class="modal-title" id="myModalLabel">Wordpress Website</h3>
+                       <h4>for Venture Cup</h4>
+
+                  </div>
+                  <div class="modal-body">
+                    <img class="modal-img" src="https://dl.dropboxusercontent.com/s/sx6q834c04db8pr/VC-homepage.jpg?dl=0"/>
+                  </div>
+                  <div class="modal-footer">
+                    <p style="margin: 0.5em 0 0.1em; 0">
+                      <b>Home Page</b>
+                    </p>
+                    <p style="margin-top:0.1em;">
+                      <a target="_blank" rel="noreferrer" href="http://venturecup.se">http://venturecup.se</a>
+                    </p>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Mobile App -->
+  <div class="modal fade" id="mobile-app-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+          <div class="modal-dialog vertical-align-center">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                      </button>
+                       <h3 class="modal-title" id="myModalLabel">Mobile App</h3>
+                       <h4>for DKV Chalmers</h4>
+
+                  </div>
+                  <div class="modal-body">
+                    <img class="modal-img" src="https://dl.dropboxusercontent.com/s/np7xt52wfsevg5d/APP.jpg?dl=0"/>
+                  </div>
+                  <div class="modal-footer">
+                    <p style="margin: 0.5em 0 0.1em; 0">
+                      <b>Accelerometer Based Timer</b>
+                    </p>
+                    <p style="margin-top:0.1em;">
+                      <a target="_blank" rel="noreferrer" href="https://itunes.apple.com/se/app/dkv/id637441520?mt=8">Download in App Store</a>
+                    </p>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Ace-up-transaction -->
+  <div class="modal fade" id="ace-up-transaction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+          <div class="modal-dialog vertical-align-center">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                      </button>
+                       <h3 class="modal-title" id="myModalLabel">Transaction Email Design</h3>
+                       <h4>for Ace-Up</h4>
+
+                  </div>
+                  <div class="modal-body">
+                    <img class="modal-img" src="https://dl.dropboxusercontent.com/s/dfx3pjto29m3euh/Ace-up%20-%20trans2.jpg?dl=0"/>
+                  </div>
+                  <div class="modal-footer">
+                    <p style="margin: 0.5em 0 0.1em; 0">
+                      <b>Booking Confirmation</b>
+                    </p>
+                    <p style="margin-top:0.1em;">
+                      <a target="_blank" rel="noreferrer" href="https://www.ace-up.com">https://ace-up.com</a>
+                    </p>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87077201-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
